@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import { useEffect, useState } from "react";
 import MainScreen from "../../Components/MainScreen";
 import { Link } from "react-router-dom";

@@ -11,22 +11,31 @@ const guestRouter = require("./routes/guestRouter");
 const contact_usRouter = require("./routes/contact_usRouter");
 const parkingLoc = require("./models/parkingsSchema");
 const ParkingsRouter = require("./routes/parkingsRoute");
-app.use(express.json());
+const spotUpdater = require('./routes/spotRouter')
+
+
+app.use(express.urlencoded({
+    extended: true
+ }));
+ app.use(express.json());
+// app.use(express.json());
+// app.use(express.urlencoded({ extended: false }));
+
 
 app.use(cors());
-// app.use(require('./router/auth'));
 dotenv.config();
 const PORT = process.env.PORT;
 
-// var collection;
 
 connectDB();
 
-app.use(express.json());
 app.use("/users", userRoutes);
 app.use("/guest", guestRouter);
 app.use("/contact_us", contact_usRouter);
 app.use("/search", ParkingsRouter);
+app.use('/updatespot', spotUpdater)
+
+
 
 
 
