@@ -14,10 +14,7 @@ const ManagementView = () => {
 
   const [users, setUsers] = useState([]);
   const [guest, setGuest] = useState([]);
-  // const [toggleState, setToggleState] = useState(1);
-  // const toggleTab = (index) => {
-  //   setToggleState(index);
-  // };
+  const [sortuser, setSortuser] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:5000/users`)
@@ -26,13 +23,17 @@ const ManagementView = () => {
       .catch((error) => console.log(error.message));
   }, []);
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/guest`)
-      .then((response) => response.json())
-      .then((data) => setGuest(data))
-      .catch((error) => console.log(error.message));
-  }, []);
+  const apartmentName = userInfo.apartment;
 
+  const filterUser = users.filter((users) => {
+    return users.apartment === apartmentName;
+  });
+
+  console.log(filterUser);
+
+  useEffect(() => {
+    setSortuser(filterUser);
+  }, []);
   console.log(users);
   return (
     <MainScreen title={`Welcome Back ${userInfo && userInfo.name}..`}>
@@ -59,7 +60,7 @@ const ManagementView = () => {
           </tr>
         </thead>
         <tbody>
-          {users.map((item) => (
+          {filterUser.map((item) => (
             <tr key={item.id}>
               <td> {item.unit}</td>
               <td> {item.name}</td>

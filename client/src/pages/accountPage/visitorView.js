@@ -12,19 +12,11 @@ const ManagementView = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
+  // const [name,setName] = useState("");
+  // const [unit, setUnit] = useState("");
   const [users, setUsers] = useState([]);
   const [guest, setGuest] = useState([]);
-  // const [toggleState, setToggleState] = useState(1);
-  // const toggleTab = (index) => {
-  //   setToggleState(index);
-  // };
-
-  useEffect(() => {
-    fetch(`http://localhost:5000/users`)
-      .then((response) => response.json())
-      .then((data) => setUsers(data))
-      .catch((error) => console.log(error.message));
-  }, []);
+  const [sortvisitor, setSortvisitor] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:5000/guest`)
@@ -33,6 +25,13 @@ const ManagementView = () => {
       .catch((error) => console.log(error.message));
   }, []);
 
+  console.log(guest);
+  const apartmentName = userInfo.apartment;
+
+  const filterguest = guest.filter((guest) => {
+    return guest.location === apartmentName;
+  });
+  console.log(filterguest);
   // users.map(function (database) {
   //   console.log(database.email);
   // });
@@ -66,7 +65,7 @@ const ManagementView = () => {
           </tr>
         </thead>
         <tbody>
-          {guest.map((item) => (
+          {filterguest.map((item) => (
             <tr key={item.id}>
               <td> {item.location}</td>
               <td> {item.firstName}</td>

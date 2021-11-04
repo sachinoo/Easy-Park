@@ -18,17 +18,7 @@ const ManagementView = () => {
   // const [unit, setUnit] = useState("");
   const [users, setUsers] = useState([]);
   const [guest, setGuest] = useState([]);
-  // const [toggleState, setToggleState] = useState(1);
-  // const toggleTab = (index) => {
-  //   setToggleState(index);
-  // };
-
-  useEffect(() => {
-    fetch(`http://localhost:5000/users`)
-      .then((response) => response.json())
-      .then((data) => setUsers(data))
-      .catch((error) => console.log(error.message));
-  }, []);
+  const [sortvisitor, setSortvisitor] = useState([]);
 
   useEffect(() => {
     fetch(`http://localhost:5000/guest`)
@@ -37,13 +27,20 @@ const ManagementView = () => {
       .catch((error) => console.log(error.message));
   }, []);
 
+  console.log(guest);
+  const apartmentName = userInfo.apartment;
+
+  const filterguest = guest.filter((guest) => {
+    return guest.location === apartmentName;
+  });
+  console.log(filterguest);
   // users.map(function (database) {
   //   console.log(database.email);
   // });
 
   console.log(users);
   return (
-    <MainScreen title={`Welcome Back ${userInfo && userInfo.name}..`}>
+    <MainScreen title={`Welcome Back ${userInfo && userInfo.name}`}>
       <Link to="/vdata">
         <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
           VISITOR DATA
@@ -54,8 +51,6 @@ const ManagementView = () => {
           USER DATA
         </Button>
       </Link>
-
-     
 
       <table class="table">
         <thead class="thead-dark">
@@ -72,7 +67,7 @@ const ManagementView = () => {
           </tr>
         </thead>
         <tbody>
-          {guest.map((item) => (
+          {filterguest.map((item) => (
             <tr key={item.id}>
               <td> {item.location}</td>
               <td> {item.firstName}</td>
