@@ -38,9 +38,6 @@ const User = () => {
   const unitNumber = userInfo.unit;
   console.log(unitNumber);
 
-  //   useEffect(() => {
-  //   setSortguest(guest.filter(() => guest.unitNumber === unitNumber));
-  // }, []);
   const filterGuest = guest.filter((guest) => {
     return guest.unitNumber === unitNumber;
   });
@@ -49,11 +46,7 @@ const User = () => {
   useEffect(() => {
     setSortguest(filterGuest);
   }, []);
-  console.log(sortguest);
 
-  sortguest.map(function (database) {
-    console.log(database.firstName);
-  });
 
   return (
     <MainScreen title={`Welcome Back ${userInfo && userInfo.name}..`}>
@@ -181,8 +174,8 @@ const User = () => {
           </tr>
         </thead>
         <tbody>
-          {sortguest.map((item) => (
-            <tr key={item.id}>
+          {filterGuest.map((item) => (
+            <tr>
               <td> {item.location}</td>
               <td> {item.firstName}</td>
               <td> {item.lastName}</td>
