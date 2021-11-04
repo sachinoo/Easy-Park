@@ -14,18 +14,6 @@ const User = () => {
   const vehiclesList = useSelector((state) => state.vehiclesList);
   const { loading, vehicles, error } = vehiclesList;
 
-  const [notes, setNotes] = useState([]);
-
-  const deleteHandler = (id) => {
-    if (window.confirm("Are you sure?")) {
-    }
-  };
-  const fetchNotes = async () => {
-    const { data } = await axios.get("api/users");
-    setNotes(data);
-  };
-
-  console.log(notes);
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
   const history = useHistory();
@@ -36,6 +24,36 @@ const User = () => {
       history.push("/");
     }
   }, [dispatch]);
+
+  const [guest, setGuest] = useState([]);
+  const [sortguest, setSortguest] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/guest`)
+      .then((response) => response.json())
+      .then((data) => setGuest(data))
+      .catch((error) => console.log(error.message));
+  }, []);
+
+  console.log(guest);
+  const unitNumber = userInfo.unit;
+  console.log(unitNumber);
+
+  //   useEffect(() => {
+  //   setSortguest(guest.filter(() => guest.unitNumber === unitNumber));
+  // }, []);
+  const filterGuest = guest.filter((guest) => {
+    return guest.unitNumber === unitNumber;
+  });
+  console.log(filterGuest);
+
+  useEffect(() => {
+    setSortguest(filterGuest);
+  }, []);
+  console.log(sortguest);
+
+  sortguest.map(function (database) {
+    console.log(database.firstName);
+  });
 
   return (
     <MainScreen title={`Welcome Back ${userInfo && userInfo.name}..`}>
@@ -147,6 +165,37 @@ const User = () => {
           </div>
         </form>
       </div>
+      <h1> REGISTERED VISITORS IN {unitNumber}</h1>
+      <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th>Location</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Unit Number</th>
+            <th>Vehicle Make</th>
+            <th>Vehicle Model</th>
+            <th>Spot Number</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {sortguest.map((item) => (
+            <tr key={item.id}>
+              <td> {item.location}</td>
+              <td> {item.firstName}</td>
+              <td> {item.lastName}</td>
+              <td> {item.phoneNumber}</td>
+              <td> {item.unitNumber}</td>
+              <td> {item.vehicleMake}</td>
+              <td> {item.vehicleModel}</td>
+              <td> {item.lisencePlate}</td>
+              <td> {item.spotNumber}</td>
+            </tr>
+          ))}{" "}
+        </tbody>
+      </table>
     </MainScreen>
   );
 };
