@@ -38,7 +38,7 @@ const ManagementView = () => {
     <MainScreen title={`Welcome Back ${userInfo && userInfo.name}..`}>
       <Link to="/vdata">
         <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
-         VISITOR DATA
+          VISITOR DATA
         </Button>
       </Link>
       <Link to="/udata">

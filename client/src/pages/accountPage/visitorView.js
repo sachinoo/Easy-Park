@@ -72,6 +72,7 @@ const ManagementView = () => {
               <td> {item.firstName}</td>
               <td> {item.lastName}</td>
               <td> {item.phoneNumber}</td>
+              <td> {item.unitNumber}</td>
               <td> {item.vehicleMake}</td>
               <td> {item.vehicleModel}</td>
               <td> {item.lisencePlate}</td>

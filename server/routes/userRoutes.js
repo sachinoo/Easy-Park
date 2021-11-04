@@ -10,3 +10,4 @@ router.route("/").post(registerUser);
 router.route("/login").post(authUser);
 router.route("/").get(find);
 module.exports = router;
+
