@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const guestVehicleInfo = require("../models/guestSchema");
 const twilio = require("twilio");
+const dotenv = require("dotenv")
+dotenv.config()
 
 router.post("/", (req, res) => {
   const location = req.body.location;
@@ -30,13 +32,13 @@ router.post("/", (req, res) => {
 
   registerVehicle.save();
 
-  const accountSid = process.env.accountSid;
-  const authToken = process.env.authToken;
+  const accountSid = process.env.TWILIO_ACCOUNT_SID;
+  const authToken = process.env.TWILIO_AUTH_TOKEN;
   const client = require("twilio")(accountSid, authToken);
 
   client.messages
     .create({
-      body: "Registration successful for",
+      body: `Hello ${firstName} \nRegistration successful \n ${vehicleMake + " " + vehicleModel + " \n at " + location }\n THANK YOU! FOR USING EASY PARK`,
       messagingServiceSid: "MG2669a09a2589e07a26b76e3ba5c3c0bf",
       to: phoneNumber,
     })

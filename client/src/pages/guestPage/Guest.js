@@ -18,11 +18,8 @@ import {
 } from "react-google-maps";
 import * as parksData from "../../data/parking.json";
 import bgImage from "../../images/parkingImage3.jpg";
-// import location from '../../service/location'
 import axios from "axios";
 import "./Guest.css";
-
-// import ParkingLots from '../../Components/ParkingSpots/Slots'
 
 const Intro = styled.div`
   display: flex;
@@ -123,11 +120,12 @@ function Guest() {
   });
 
   useEffect(() => {
-    fetch("/search")
+    fetch(`http://localhost:5000/search`)
       .then((response) => response.json())
-      //   .then((response) => setSpot(data))
+      .then((data) => setSpot(data))
       .catch((error) => console.log(error.message));
   }, []);
+
   console.log(spot);
   spot.map(function (spot) {
     parkings.location = spot.location;
@@ -172,7 +170,8 @@ function Guest() {
       };
     });
 
-    axios.get(`http://localhost:5000/search?term=${value}`).then((res) => {
+    // ?term=${value}
+    axios.get(`http://localhost:5000/search`).then((res) => {
       if (typeof res != "undefined") {
         res.data.map((element, index) => {
           if (!location.includes(element.location)) {
@@ -204,7 +203,11 @@ function Guest() {
       last4Digits: input.last4Digits,
       spotNumber: input.spotNumber,
     };
-    console.log(guestInfo);
+    const spotInfo = {
+      location:input.location,
+      spotNumber: input.spotNumber
+    }
+    console.log(spotInfo);
 
     if (parkings.location != guestInfo.location) {
       console.log(spot.location);
@@ -213,11 +216,12 @@ function Guest() {
       axios.post("http://localhost:5000/guest", guestInfo);
       window.alert("Registration Successful, Thank you!");
 
-      axios.put("http://localhost:5000/search", {
-        loction: guestInfo.loction,
-        spotNumber: guestInfo.spotNumber,
-      });
+      
     }
+    axios.post(`http://localhost:5000/search`, spotInfo)
+    .then(response => {
+      console.log(response.data);
+    })
 
     setInput({ ...initialState });
   }
@@ -238,14 +242,14 @@ function Guest() {
     spot.map((element, index) => {
       console.log(typeof element.available[4]);
       element.available.map((spot, index) => {
-        if (spot) {
+        // if (spot) {
           arr.push(
-            <option key={index} value={index}>
+            <option key={index} value={spot}>
               {" "}
-              Spot {index}
+              Spot {spot}
             </option>
           );
-        }
+        // }
       });
     });
     return arr;

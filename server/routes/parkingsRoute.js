@@ -2,31 +2,7 @@ const express = require ('express');
 const router = express.Router();
 const parkingLocation = require('../models/parkingsSchema')
 
-router.put("/:spotNumber", (req, res) => {
-    const location = req.body.location;
-    const spotNumber = req.body;
-    console.log(location)
-    console.log(numbers)
-
-    parkingLocation.findOneAndUpdate({location: 'The Hunt Club'},{
-        $set:{
-            'available.{spotNumber}':false
-        }
-    })
-
-    // const parkinginfo = new parkingLocation({
-    //     location,
-    //     numbers,
-    //     available
-    // })
-
-    // parkinginfo.save()
-    // console.log(parkinginfo)
-
-
-})
-
-router.get("/", (req, res) => {
+router.get('/', (req, res) => {
 
     parkingLocation.find().then((result)=>{
         res.send(result);
@@ -38,11 +14,33 @@ router.get("/", (req, res) => {
     
 })
 
-// parking.updateOne({},{
-//     $set:{
-//         "available.3":false
-//     8/*/}
-// })
+router.post('/', (req, res)=>{
+    const location = "The Ranches";
+    const numbers = 10;
+    const available = ["a1","a2"];
+    // console.log(location)
+    console.log(available)
+
+    const parkingInfo = new parkingLocation({
+        location,
+        numbers,
+        available
+    })
+    // parkingInfo.save();
+
+    parkingLocation.find(
+        { 
+            location: "The Ranch"
+        },
+    {
+        $pull : {
+            available: 'a2'
+        }
+    })
+ 
+
+
+})
 
 
 

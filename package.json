@@ -5,13 +5,14 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server/server.js"
-
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
+    "cache": "^2.3.1",
+    "clean": "^4.0.2",
     "concurrently": "^6.3.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
@@ -25,6 +26,10 @@
     "mongoose": "^6.0.12",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.14",
-    "twilio": "^3.70.0"
+    "npm": "^8.1.2",
+    "twilio": "^3.71.1"
+  },
+  "devDependencies": {
+    "@babel/preset-react": "^7.16.0"
   }
 }
