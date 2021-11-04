@@ -1,0 +1,140 @@
+{
+    "type": "FeatureCollection",
+    "crs": {
+      "type": "name",
+      "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+    },
+    "features": [
+
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 0,
+          "FACILITYID": 28014,
+          "NAME": "Lot F-0",
+          "NAME_FR": "",
+          "ADDRESS": "",
+          "ACCESSIBLE": "yes",
+          "OPEN": null,
+          "NOTES": "Outdoor",
+          "MODIFIED_D": "2018/01/18",
+          "CREATED_DA": null,
+          "DESCRIPTIO": "Flat asphalt surface. Total parking spots: 30. Availabe spots: 23",
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-101.894920, 33.588588]
+        }
+      },
+
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 1,
+          "FACILITYID": 28015,
+          "NAME": "Lot F-1",
+          "NAME_FR": "",
+          "ADDRESS": "",
+          "ACCESSIBLE": "yes",
+          "OPEN": null,
+          "NOTES": "Outdoor",
+          "MODIFIED_D": "2018/01/18",
+          "CREATED_DA": null,
+          "DESCRIPTIO": "Flat asphalt surface. Total parking spots: 80. Availabe spots: 32",
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-101.895173, 33.589639]
+        }
+      },
+
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 2,
+          "FACILITYID": 28016,
+          "NAME": "Lot F-2",
+          "NAME_FR": "",
+          "ADDRESS": "",
+          "ACCESSIBLE": "yes",
+          "OPEN": null,
+          "NOTES": "Outdoor",
+          "MODIFIED_D": "2018/01/18",
+          "CREATED_DA": null,
+          "DESCRIPTIO": "Flat asphalt surface. Total parking spots: 70. Availabe spots: 47",
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-101.895318, 33.590680]
+        }
+      },
+
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 3,
+          "FACILITYID": 28017,
+          "NAME": "Lot S-1",
+          "NAME_FR": "",
+          "ADDRESS": "",
+          "ACCESSIBLE": "yes",
+          "OPEN": null,
+          "NOTES": "Outdoor",
+          "MODIFIED_D": "2018/01/18",
+          "CREATED_DA": null,
+          "DESCRIPTIO": "Flat asphalt surface. Total parking spots: 65. Availabe spots: 54",
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-101.898049, 33.588521]
+        }
+      },
+
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 4,
+          "FACILITYID": 28018,
+          "NAME": "Lot S-1",
+          "NAME_FR": "Commuter Parking - Lot S1",
+          "ADDRESS": "",
+          "ACCESSIBLE": "yes",
+          "OPEN": null,
+          "NOTES": "Outdoor",
+          "MODIFIED_D": "2018/01/18",
+          "CREATED_DA": null,
+          "DESCRIPTIO": "Flat asphalt surface. Total parking spots: 70. Availabe spots: 54",
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-101.899899, 33.586939]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {
+          "PARK_ID": 5,
+          "FACILITYID": 28019,
+          "NAME": "Visitor Parking 1",
+          "NAME_FR": "Indiana Village Apartment - Visitor 1",
+          "ADDRESS": "",
+          "ACCESSIBLE": "yes",
+          "OPEN": null,
+          "NOTES": "Outdoor",
+          "MODIFIED_D": "2018/01/18",
+          "CREATED_DA": null,
+          "DESCRIPTIO": " Total parking spots: 20. Availabe spots: 10",
+          "PICTURE__1": null
+        },
+        "geometry": {
+          "type": "Point",
+          "coordinates": [-101.88794987379934, 33.610184192391]
+        }
+      }
+    ]
+  }
