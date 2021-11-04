@@ -17,6 +17,8 @@ import Signup from "./pages/accountPage/RegisterScreen";
 import LandingPage from "./pages/accountPage/LandingPage";
 import Management from "./pages/accountPage/ManagementLogin";
 import ManagementView from "./pages/accountPage/ManagementView";
+import UserData from "./pages/accountPage/usersView";
+import VisitorData from "./pages/accountPage/visitorView";
 
 const App = () => (
   <BrowserRouter>
@@ -33,6 +35,8 @@ const App = () => (
       <Route path="/contact_us" exact component={Contact_Us} />
       <Route path="/user" exact component={User} />
       <Route path="/account" exact component={LandingPage} />
+      <Route path="/udata" exact component={UserData} />
+      <Route path="/vdata" exact component={VisitorData} />
     </main>
     <Footer />
   </BrowserRouter>

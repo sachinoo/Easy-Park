@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -14,8 +12,6 @@ const ManagementView = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
 
-  // const [name,setName] = useState("");
-  // const [unit, setUnit] = useState("");
   const [users, setUsers] = useState([]);
   const [guest, setGuest] = useState([]);
   // const [toggleState, setToggleState] = useState(1);
@@ -54,8 +50,6 @@ const ManagementView = () => {
           USER DATA
         </Button>
       </Link>
-
-     
 
       <table class="table">
         <thead class="thead-dark">

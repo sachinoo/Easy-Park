@@ -1,5 +1,4 @@
 const express = require("express");
-const notes = require("./notes");
 const dotenv = require("dotenv");
 const connectDB = require("./config/db");
 const userRoutes = require("./routes/userRoutes");
@@ -23,7 +22,6 @@ app.use(express.urlencoded({
 // app.use(express.urlencoded({ extended: false }));
 
 
-
 app.use(cors());
 dotenv.config();
 const PORT = process.env.PORT;
@@ -31,14 +29,17 @@ const PORT = process.env.PORT;
 
 connectDB();
 
-app.use(express.json());
-app.use("/api/users", userRoutes);
-// app.use(notFound);
-// app.use(errorHandler);
+app.use("/users", userRoutes);
 app.use("/guest", guestRouter);
 app.use("/contact_us", contact_usRouter);
 app.use("/search", ParkingsRouter);
 app.use('/updatespot', spotUpdater)
 
 
+
+
+
+
+
+// const PORT = process.env.PORT || 5000;
 app.listen(PORT, console.log(`Server started on PORT ${PORT}`));

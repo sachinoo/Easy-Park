@@ -21,7 +21,7 @@ const userSchema = mongoose.Schema(
       required: true,
     },
     unit: {
-      type: Number,
+      type: String,
       required: true,
     },
     guestcode: {

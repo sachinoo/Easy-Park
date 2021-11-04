@@ -16,3 +16,4 @@ const parkingsSchema = new mongoose.Schema({
 
 const parkingLocation = mongoose.model("parkings", parkingsSchema);
 module.exports = parkingLocation;
+
