@@ -7,7 +7,11 @@ const parkingsSchema = new mongoose.Schema({
   numbers: {
     type: Number
   },
-  available: [String],
+  available: [
+    {"id":Number, 
+      "name":String, 
+      "value":Boolean}
+  ],
   date: {
     type: Date,
     default: Date.now,
