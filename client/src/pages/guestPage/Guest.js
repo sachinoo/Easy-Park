@@ -204,9 +204,9 @@ function Guest() {
       spotNumber: input.spotNumber,
     };
     const spotInfo = {
-      location:input.location,
-      spotNumber: input.spotNumber
-    }
+      location: input.location,
+      spotNumber: input.spotNumber,
+    };
     console.log(spotInfo);
 
     if (parkings.location != guestInfo.location) {
@@ -215,13 +215,12 @@ function Guest() {
     } else {
       axios.post("http://localhost:5000/guest", guestInfo);
       window.alert("Registration Successful, Thank you!");
-
-      
     }
-    axios.post(`http://localhost:5000/updatespot`, spotInfo)
-    .then(response => {
-      console.log(response.data);
-    })
+    axios
+      .post(`http://localhost:5000/updatespot`, spotInfo)
+      .then((response) => {
+        console.log(response.data);
+      });
 
     setInput({ ...initialState });
   }
@@ -240,11 +239,9 @@ function Guest() {
     var arr = [];
 
     spot.map((element, index) => {
-
       element.available.map((spot, index) => {
-
         if (spot.value) {
-          console.log(spot)
+          console.log(spot);
 
           arr.push(
             <option key={spot.id} value={spot.id}>
@@ -252,7 +249,7 @@ function Guest() {
               Spot {spot.id}
             </option>
           );
-         }
+        }
       });
     });
     return arr;
@@ -356,6 +353,7 @@ function Guest() {
                     placeholder="Enter first Name"
                     variant="outlined"
                     fullWidth
+                    type="string"
                     required
                   />
                 </Grid>
@@ -368,6 +366,7 @@ function Guest() {
                     variant="outlined"
                     fullWidth
                     required
+                    type="string"
                     onChange={handleChange}
                   />
                 </Grid>
@@ -380,6 +379,7 @@ function Guest() {
                     variant="outlined"
                     fullWidth
                     required
+                    type="number"
                     onChange={handleChange}
                   />
                 </Grid>
@@ -394,6 +394,7 @@ function Guest() {
                     variant="outlined"
                     fullWidth
                     required
+                    type="Number"
                     onChange={handleChange}
                   />
                 </Grid>
@@ -451,7 +452,7 @@ function Guest() {
                   <Button
                     type="submit"
                     variant="contained"
-                    color="primary"
+                    color="secondary"
                     fullWidth
                     onClick={handleOnClick}
                   >
@@ -461,11 +462,9 @@ function Guest() {
               </Grid>
             </CardContent>
           </Card>
-          
         </form>
-        </div>
+      </div>
     </MainContainer>
-    
   );
 }
 
