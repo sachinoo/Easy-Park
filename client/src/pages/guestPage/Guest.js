@@ -218,7 +218,7 @@ function Guest() {
 
       
     }
-    axios.post(`http://localhost:5000/search`, spotInfo)
+    axios.post(`http://localhost:5000/updatespot`, spotInfo)
     .then(response => {
       console.log(response.data);
     })
@@ -230,7 +230,7 @@ function Guest() {
     //   var o = formid.spots[formid.spots.selectedIndex].text;
     var sp = document.getElementById("spots");
     if (sp != null) {
-      console.log(sp.value);
+      console.log(sp);
       input.spotNumber = sp.value;
       //   setInput({...input, spotNumber: sp.value})
     }
@@ -240,16 +240,19 @@ function Guest() {
     var arr = [];
 
     spot.map((element, index) => {
-      console.log(typeof element.available[4]);
+
       element.available.map((spot, index) => {
-        // if (spot) {
+
+        if (spot.value) {
+          console.log(spot)
+
           arr.push(
-            <option key={index} value={spot}>
+            <option key={spot.id} value={spot.id}>
               {" "}
-              Spot {spot}
+              Spot {spot.id}
             </option>
           );
-        // }
+         }
       });
     });
     return arr;
