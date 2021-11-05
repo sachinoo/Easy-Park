@@ -12,33 +12,31 @@ const guestRouter = require("./routes/guestRouter");
 const contact_usRouter = require("./routes/contact_usRouter");
 const parkingLoc = require("./models/parkingsSchema");
 const ParkingsRouter = require("./routes/parkingsRoute");
-const spotUpdater = require('./routes/spotRouter')
-const { MongoClient } = require('mongodb')
-
-app.use(express.urlencoded({
-    extended: true
- }));
- app.use(express.json());
+const spotUpdater = require("./routes/spotRouter");
+const { MongoClient } = require("mongodb");
+const residentRouter = require("./routes/residentRouter");
+app.use(
+  express.urlencoded({
+    extended: true,
+  })
+);
+app.use(express.json());
 // app.use(express.json());
 // app.use(express.urlencoded({ extended: false }));
-
-
 
 app.use(cors());
 dotenv.config();
 const PORT = process.env.PORT;
 
-
 connectDB();
 
 app.use(express.json());
-app.use("/api/users", userRoutes);
+app.use("/users", userRoutes);
 // app.use(notFound);
 // app.use(errorHandler);
 app.use("/guest", guestRouter);
 app.use("/contact_us", contact_usRouter);
 app.use("/search", ParkingsRouter);
-app.use('/updatespot', spotUpdater)
-
-
+app.use("/updatespot", spotUpdater);
+app.use("/resident", residentRouter);
 app.listen(PORT, console.log(`Server started on PORT ${PORT}`));

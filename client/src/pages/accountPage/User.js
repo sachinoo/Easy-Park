@@ -36,19 +36,44 @@ const User = () => {
       .catch((error) => console.log(error.message));
   }, []);
 
+
+
+
+
   console.log(guest);
   const unitNumber = userInfo.unit;
+  const apartment = userInfo.apartment;
   console.log(unitNumber);
 
   const filterGuest = guest.filter((guest) => {
-    return guest.unitNumber === unitNumber;
+    return guest.unitNumber === unitNumber && guest.location === apartment;
   });
   console.log(filterGuest);
+
+  const [resident, setResident] = useState([]);
+  const[filterresident,setFilterresident] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/resident`)
+      .then((response) => response.json())
+      .then((data) => setResident(data))
+      .catch((error) => console.log(error.message));
+  }, []);
+
+  const filterVehicle = resident.filter((resident) => {
+    return resident.unit === unitNumber 
+  });
+  console.log(filterVehicle);
+
 
   useEffect(() => {
     setSortguest(filterGuest);
   }, []);
 
+  const [toggleState, setToggleState] = useState(1);
+
+  const toggleTab = (index) => {
+    setToggleState(index);
+  };
 
   return (
     <MainScreen title={`Welcome Back ${userInfo && userInfo.name}..`}>
@@ -58,139 +83,119 @@ const User = () => {
         </Button>
       </Link>
       <div className="container">
-        <form method="GET">
-          <div className="row">
-            <div className="col-md-4"></div>
-            <div className="col-md-6">
-              <div className="profile-head">
-                <p className="profile-rating mt-3 mb-"> </p>
-                <ul className="nav nav-tabs">
-                  <li className="nav-item">
-                    <a
-                      className="nav-link active"
-                      id="home-tab"
-                      data-toggle="tab"
-                      href="#home"
-                      role="tab"
-                    >
-                      About
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      className="nav-link active"
-                      id="vehicle-tab"
-                      data-toggle="tab"
-                      href="#vehicle"
-                      role="tab"
-                    >
-                      Vehicles
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+        <div className="bloc-tabs">
+          <button
+            className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+            onClick={() => toggleTab(1)}
+          >
+            RESIDENT PROFILE
+          </button>
+          <button
+            className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+            onClick={() => toggleTab(2)}
+          >
+            RESIDENT VEHICLES
+          </button>
+          <button
+            className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+            onClick={() => toggleTab(3)}
+          >
+            VISITOR VEHICLES
+          </button>
+        </div>
 
-            <div className="row">
-              <div className="col-md-4">
-                <div className="profile-work"></div>
-              </div>
+        <div className="content-tabs">
+          <div
+            className={
+              toggleState === 1 ? "content  active-content" : "content"
+            }
+          >
+            <hr />
 
-              <div className=" col-md-8 pl-5 about-info">
-                <div className="tab-content profile-tab" id="myTabContent">
-                  <div
-                    className="tab-pane fade show active"
-                    id="home-tab"
-                    role="tabpanel"
-                    aria-labelledby="home-tab"
-                  >
-                    <div className="row mt-4">
-                      <div className="col-md-6">
-                        <label>User ID</label>
-                      </div>
-                      <div className="col-md-6">
-                        <p> {userInfo?._id}</p>
-                      </div>
-                    </div>
-                    <div className="row mt-1">
-                      <div className="col-md-6">
-                        <label>Name</label>
-                      </div>
-                      <div className="col-md-6">
-                        <p> {userInfo?.name}</p>
-                      </div>
-                    </div>
-                    <div className="row mt-1">
-                      <div className="col-md-6">
-                        <label>Apartment</label>
-                      </div>
-                      <div className="col-md-6">
-                        <p> {userInfo?.apartment} </p>
-                      </div>
-                    </div>
-                    <div className="row mt-1">
-                      <div className="col-md-6">
-                        <label> Unit</label>
-                      </div>
-                      <div className="col-md-6">
-                        <p> {userInfo?.unit}</p>
-                      </div>
-                    </div>
-                    <div className="row mt-1">
-                      <div className="col-md-6">
-                        <label>Phone</label>
-                      </div>
-                      <div className="col-md-6">
-                        <p> {userInfo?.phone}</p>
-                      </div>
-                    </div>
-
-                    <div className="row mt-1">
-                      <div className="col-md-6">
-                        <label>Email</label>
-                      </div>
-                      <div className="col-md-6">
-                        <p> {userInfo?.email}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="card2">
+              <h1></h1>
+              <p class="title2">Name:{userInfo.name}</p>
+              <p class="title2">UserId:{userInfo._id}</p>
+              <p class="title2">Email:{userInfo.email}</p>
+              <p class="title2">Apartment:{userInfo.apartment}</p>
+              <p class="title2">Unit:{userInfo.unit}</p>
+              <p class="title2">Guest Code:{userInfo.guestcode}</p>
             </div>
           </div>
-        </form>
+
+          <div
+            className={
+              toggleState === 2 ? "content  active-content" : "content"
+            }
+          >
+            <hr />
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">MAKE</th>
+                  <th scope="col">MODEL</th>
+                  <th scope="col">YEAR</th>
+                  <th scope="col">GARAGE NO.</th>
+                  <th scope="col">PLATE</th>
+                </tr>
+              </thead>
+              <tbody>
+                {filterVehicle.map((item) => (
+                  <tr>
+                    <td> {item.make}</td>
+                    <td> {item.model}</td>
+                    <td> {item.year}</td>
+                    <td> {item.garage}</td>
+                    <td> {item.licenseplate}</td>
+                  </tr>
+                ))}{" "}
+              </tbody>
+            </table>
+          </div>
+
+          <div
+            className={
+              toggleState === 3 ? "content  active-content" : "content"
+            }
+          >
+            <hr />
+            <div className="datatable">
+              <h1> REGISTERED VISITORS </h1>
+              <h2> Apartment Unit: {unitNumber}</h2>
+              <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th>Location</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Phone</th>
+                    <th>Unit Number</th>
+                    <th>Vehicle Make</th>
+                    <th>Vehicle Model</th>
+                    <th>Spot Number</th>
+                    <th>Spot Number</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filterGuest.map((item) => (
+                    <tr>
+                      <td> {item.location}</td>
+                      <td> {item.firstName}</td>
+                      <td> {item.lastName}</td>
+                      <td> {item.phoneNumber}</td>
+                      <td> {item.unitNumber}</td>
+                      <td> {item.vehicleMake}</td>
+                      <td> {item.vehicleModel}</td>
+                      <td> {item.lisencePlate}</td>
+                      <td> {item.spotNumber}</td>
+                    </tr>
+                  ))}{" "}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
-      <h1> REGISTERED VISITORS IN {unitNumber}</h1>
-      <table class="table">
-        <thead class="thead-dark">
-          <tr>
-            <th>Location</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Phone</th>
-            <th>Unit Number</th>
-            <th>Vehicle Make</th>
-            <th>Vehicle Model</th>
-            <th>Spot Number</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filterGuest.map((item) => (
-            <tr>
-              <td> {item.location}</td>
-              <td> {item.firstName}</td>
-              <td> {item.lastName}</td>
-              <td> {item.phoneNumber}</td>
-              <td> {item.unitNumber}</td>
-              <td> {item.vehicleMake}</td>
-              <td> {item.vehicleModel}</td>
-              <td> {item.lisencePlate}</td>
-              <td> {item.spotNumber}</td>
-            </tr>
-          ))}{" "}
-        </tbody>
-      </table>
     </MainScreen>
   );
 };

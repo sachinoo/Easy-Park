@@ -1,7 +1,6 @@
 .mainContainer {
   display: flex;
-  flex-direction: COL;
-  padding: 5%;
+  flex-direction: row;
   justify-content: space-evenly;
 }
 
@@ -14,7 +13,9 @@
     justify-content: space-evenly;
   }
   .maps {
-    display: block;
-    width: 100%;
+    padding: 3rem;
+    display: flex;
+    flex-direction: row;
+    width: 500%;
   }
 }
