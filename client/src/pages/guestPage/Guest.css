@@ -4,6 +4,24 @@
   justify-content: space-evenly;
 }
 
+.maps {
+margin-left:25%;
+  flex-direction: row;
+
+  width: 500%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns:1fr 1fr 1fr;
+}
+
+.card{
+  display: flex;
+    flex-direction: column;
+}
+
+
 @media screen and (max-width: 650px) {
   .mainContainer {
     display: block;

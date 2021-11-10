@@ -52,6 +52,13 @@ const ManagementView = () => {
         </Button>
       </Link>
 
+      <input
+        type="text"
+        className="myInput"
+        onkeyup="myFunction()"
+        placeholder="Search Visitor..."
+      />
+
       <table class="table">
         <thead class="thead-dark">
           <tr>

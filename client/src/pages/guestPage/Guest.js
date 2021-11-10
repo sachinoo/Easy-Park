@@ -463,19 +463,20 @@ function Guest() {
             </CardContent>
           </Card>
         </form>
+        
+</div>
+<div className="maps" style={{ width: "50vw", height: "60vh" }}>
+<WrappedMap
+  googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,
+  places&key=AIzaSyDO8I3nWxsl90sG7Cfjz6yX7YWpVjznX2Y`}
+  loadingElement={<div style={{ height: "100%" }} />}
+  containerElement={<div style={{ height: "100%" }} />}
+  mapElement={<div style={{ height: "100%" }} />}
+/>
+
       </div>
     </MainContainer>
   );
 }
 
 export default Guest;
-
-// </div>
-// <div className="maps" style={{ width: "50vw", height: "60vh" }}>
-// <WrappedMap
-//   googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,
-//   places&key=AIzaSyDO8I3nWxsl90sG7Cfjz6yX7YWpVjznX2Y`}
-//   loadingElement={<div style={{ height: "100%" }} />}
-//   containerElement={<div style={{ height: "100%" }} />}
-//   mapElement={<div style={{ height: "100%" }} />}
-// />

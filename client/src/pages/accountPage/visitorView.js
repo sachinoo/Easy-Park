@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import MainScreen from "../../Components/MainScreen";
 import { useHistory } from "react-router-dom";
 // import 'bootstrap/dist/css/bootstrap.min.css';
+import "./ManagementView.css";
 
 const ManagementView = () => {
   const dispatch = useDispatch();
@@ -51,6 +52,13 @@ const ManagementView = () => {
           USER DATA
         </Button>
       </Link>
+
+      <input
+        type="text"
+        className="myInput"
+        onkeyup="myFunction()"
+        placeholder="Search Visitor..."
+      />
 
       <table class="table">
         <thead class="thead-dark">
