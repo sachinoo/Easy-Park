@@ -51,3 +51,5 @@ $ cd server   // go to server folder
 $ npm i       // npm install packages
 $npm start      // start the server
  ```
+ ## Screen Shot of the App
+![image](https://user-images.githubusercontent.com/24665608/141245333-e6d0a591-6cc6-4fc9-af9d-aacf7ad2c108.png)
