@@ -15,6 +15,7 @@ const ParkingsRouter = require("./routes/parkingsRoute");
 const spotUpdater = require("./routes/spotRouter");
 const { MongoClient } = require("mongodb");
 const residentRouter = require("./routes/residentRouter");
+const removeguests = require("./routes/removeGuestRoute")
 app.use(
   express.urlencoded({
     extended: true,
@@ -39,4 +40,5 @@ app.use("/contact_us", contact_usRouter);
 app.use("/search", ParkingsRouter);
 app.use("/updatespot", spotUpdater);
 app.use("/resident", residentRouter);
+app.use("/removeguest", removeguests);
 app.listen(PORT, console.log(`Server started on PORT ${PORT}`));
