@@ -1,5 +1,5 @@
 
-Get Your Parking Permits From Anywhere
+<h2 align="center">Get Your Parking Permits From Anywhere </h2>
 
 <h1 align="center">
 🌐 Easy-Park
