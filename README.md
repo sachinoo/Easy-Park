@@ -53,3 +53,8 @@ $npm start      // start the server
  ```
  ## Screen Shot of the App
 ![image](https://user-images.githubusercontent.com/24665608/141245333-e6d0a591-6cc6-4fc9-af9d-aacf7ad2c108.png)
+![image](https://user-images.githubusercontent.com/24665608/141245399-c9ef307c-132e-4915-a9d2-5dc0b0d7e596.png)
+![image](https://user-images.githubusercontent.com/24665608/141245430-e08916ea-0c84-4c97-80b2-cb81164fe141.png)
+![image](https://user-images.githubusercontent.com/24665608/141245466-ac3ef6b3-2597-4549-a0dc-678fe0d9f891.png)
+
+
