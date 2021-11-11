@@ -35,18 +35,19 @@ $ npm run dev // run it locally
 
 
 
-## Server-side usage(PORT: 5000)
+
 
 ### Start
 
 ```terminal
-$ cd server   // go to server folder
-$ npm i       // npm install packages
-$npm start      // start the server
-
 $ cd client     // go to the client folder
 $ npm i         // install all the packages
 $npm start      // start the client side
 ```
 
-
+## Server-side usage(PORT: 5000)
+```terminal
+$ cd server   // go to server folder
+$ npm i       // npm install packages
+$npm start      // start the server
+ ```
