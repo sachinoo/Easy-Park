@@ -22,7 +22,7 @@ $ npm install
 
 ## Prerequisites
 - [MongoDB](https://gist.github.com/nrollr/9f523ae17ecdbb50311980503409aeb3)
-- [Node](https://nodejs.org/en/download/) ^10.0.0
+- [Node](https://nodejs.org/en/download/) 
 - [npm](https://nodejs.org/en/download/package-manager/)
 
 
@@ -33,14 +33,9 @@ $ cd client   // go to client folder
 $ npm i       // npm install packages
 $ npm run dev // run it locally
 
-// deployment for client app
-$ npm run build // this will compile the react code using webpack and generate a folder called docs in the root level
-$ npm run start // this will run the files in docs, this behavior is exactly the same how gh-pages will run your static site
-```
+
 
 ## Server-side usage(PORT: 5000)
-
-
 
 ### Start
 
