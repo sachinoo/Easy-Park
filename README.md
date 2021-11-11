@@ -1,10 +1,11 @@
-# Easy-Park
+
 Get Your Parking Permits From Anywhere
 
 <h1 align="center">
-🌐 MERN Stack
+🌐 Easy-Park
 </h1>
 <p align="center">
+   Get Your Parking Permits From Anywhere
 MongoDB, Expressjs, React/Redux, Nodejs
 </p>
 
