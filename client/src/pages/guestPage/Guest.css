@@ -1,24 +1,14 @@
 .mainContainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  margin-left: 40px;
 }
 
 .maps {
-margin-left:25%;
-  flex-direction: row;
-
+  margin-left: 1%;
+  margin-top: 50px;
+  margin-right: 40px;
   width: 500%;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns:1fr 1fr 1fr;
-}
-
-.card{
-  display: flex;
-    flex-direction: column;
 }
 
 
@@ -26,7 +16,7 @@ margin-left:25%;
   .mainContainer {
     display: block;
     width: 100%;
-    flex-direction: COL;
+    flex-direction: row;
     padding: 5%;
     justify-content: space-evenly;
   }
