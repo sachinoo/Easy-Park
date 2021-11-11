@@ -19,11 +19,13 @@ import Management from "./pages/accountPage/ManagementLogin";
 import ManagementView from "./pages/accountPage/ManagementView";
 import UserData from "./pages/accountPage/usersView";
 import VisitorData from "./pages/accountPage/visitorView";
+import removeVehicle from './pages/removeGuest/removeGuest';
 
 const App = () => (
   <BrowserRouter>
     <Header />
     <main>
+      <Route path = "/removevehicle" exact component = {removeVehicle} />
       <Route path="/" exact component={Home} />
       <Route path="/guest" exact component={Guest} />
       <Route path="/about" exact component={About} />
