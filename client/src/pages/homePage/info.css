@@ -1,5 +1,10 @@
-.banner{
-
-    margin-bottom: 50px;
-    
+.banner {
+  margin-bottom: 50px;
+}
+.registerbutton {
+  margin: 50px;
+  font-size: 1rem;
+}
+.loginbutton {
+  font-size: 1rem;
 }

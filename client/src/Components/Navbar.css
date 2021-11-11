@@ -12,11 +12,14 @@ i {
   margin-right: 10px;
 }
 .navbar-logo {
-  padding: 15px;
+  padding: 1px;
+  margin-right: 20px;
   color: #fff;
+  pointer-events: none;
 }
+
 .navbar-mainbg {
-  background-color: #000000;
+  background-color: #0c0c0c;
   padding: 0px;
 }
 #navbarSupportedContent {
@@ -35,9 +38,9 @@ i {
   float: left;
 }
 #navbarSupportedContent ul li a {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(250, 250, 250, 0.5);
   text-decoration: none;
-  font-size: 20px;
+  font-size: 15px;
   display: block;
   padding: 20px 20px;
   transition-duration: 0.6s;
@@ -45,7 +48,7 @@ i {
   position: relative;
 }
 #navbarSupportedContent > ul > li.active > a {
-  color: #e29d09;
+  color: #ee8700;
   background-color: transparent;
   transition: all 0.7s;
 }
@@ -74,7 +77,7 @@ i {
   left: 0px;
   transition-duration: 0.6s;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  background-color: rgb(1, 104, 27);
+  background-color: rgb(1, 160, 1);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
   margin-top: 10px;
@@ -84,7 +87,7 @@ i {
   position: absolute;
   width: 25px;
   height: 25px;
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(1, 160, 1);
   bottom: 10px;
 }
 .hori-selector .right {
@@ -110,7 +113,7 @@ i {
   bottom: 0;
   left: -25px;
 }
-@media (max-width: 991px) {
+@media (max-width: 1080px) {
   #navbarSupportedContent ul li a {
     padding: 12px 30px;
   }

@@ -45,10 +45,10 @@ const guestSchema = new mongoose.Schema(
       type: Date,
       default: Date.now,
     },
-  },
-  { timestamps: true }
+  }
+  // { timestamps: true }
 );
-guestSchema.index({ createdAt: 1 }, { expireAfterSeconds: 86400 });
+guestSchema.index({ createdAt: 1 }, { expireAfterSeconds: 60 });
 
 const guestVehicleInfo = mongoose.model("guestVehicleInfo", guestSchema);
 module.exports = guestVehicleInfo;

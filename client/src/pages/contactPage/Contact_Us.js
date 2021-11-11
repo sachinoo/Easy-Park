@@ -256,6 +256,8 @@
 
 import React, { useRef } from "react";
 import emailjs from "emailjs-com";
+import bgImage from "../../images/parkingImage3.jpg";
+
 import "./Contact.css";
 
 export const Contact_Us = () => {
@@ -283,51 +285,67 @@ export const Contact_Us = () => {
   };
 
   return (
-    <div class="container">
-      <form ref={form} id="contact" action="" onSubmit={sendEmail}>
-        <h3>Get in Touch</h3>
-        <h4>Contact us today, and get reply with in 24 hours!</h4>
-        <fieldset>
-          <input
-            placeholder="Your name"
-            type="text"
-            name="name"
-            tabindex="1"
-            required
-            autofocus
-          />
-        </fieldset>
-        <fieldset>
-          <input
-            placeholder="Your Email Address"
-            type="email"
-            name="user_email"
-            tabindex="2"
-            required
-          />
-        </fieldset>
+    <div
+      class="bg_image"
+      style={{
+        backgroundImage: "url(" + bgImage + ")",
+        backgroundSize: "cover",
+        height: "100vh",
+      }}
+    >
+      <div class="container">
+        <form ref={form} id="contact" action="" onSubmit={sendEmail}>
+          <h3>Get in Touch</h3>
+          <h4>Contact us today, and get reply with in 24 hours!</h4>
+          <fieldset>
+            <input
+              placeholder="Your name"
+              type="text"
+              name="name"
+              tabindex="1"
+              required
+              autofocus
+            />
+          </fieldset>
+          <fieldset>
+            <input
+              placeholder="Your Email Address"
+              type="email"
+              name="user_email"
+              tabindex="2"
+              required
+            />
+          </fieldset>
+          <fieldset>
+            <input
+              placeholder="Contact Number"
+              type="number"
+              name="user_number"
+              required
+            />
+          </fieldset>
 
-        <fieldset>
-          <textarea
-            placeholder="Type your Message Here...."
-            tabindex="5"
-            name="message"
-            required
-          ></textarea>
-        </fieldset>
-        <fieldset>
-          <button
-            name="submit"
-            type="submit"
-            id="contact-submit"
-            data-submit="...Sending"
-          >
-            Submit
-          </button>
-        </fieldset>
-      </form>
+          <fieldset>
+            <textarea
+              placeholder="Type your Message Here...."
+              tabindex="5"
+              name="message"
+              required
+            ></textarea>
+          </fieldset>
+          <fieldset>
+            <button
+              name="submit"
+              type="submit"
+              id="contact-submit"
+              data-submit="...Sending"
+            >
+              Submit
+            </button>
+          </fieldset>
+        </form>
+      </div>
     </div>
-
     // <div className ="container border">
     //   <form ref={form} onSubmit={sendEmail}>
     //     <label>Name</label>

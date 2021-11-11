@@ -28,10 +28,10 @@ const Intro = styled.div`
   text-align: center;
   font-size: 1.5rem;
   margin-top: 1rem;
-  color: white;
+  color: Yellow;
   text-shadow: 2px 2px brown;
   p {
-    font-size: 1.4rem;
+    font-size: 1rem;
     font-display: initial;
   }
 `;
@@ -272,8 +272,8 @@ function Guest() {
           <Card
             style={{
               maxHeight: 1500,
-              maxWidth: 600,
-              margin: "30px auto",
+              maxWidth: 900,
+              margin: "50px auto",
               padding: "10px 5px",
             }}
           >
@@ -463,9 +463,9 @@ function Guest() {
             </CardContent>
           </Card>
         </form>
-        
-</div>
-<div className="maps" style={{ width: "50vw", height: "60vh" }}>
+
+     
+        <div className="maps" style={{ width: "50vw", height: "60vh" }}>
 <WrappedMap
   googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,
   places&key=AIzaSyDO8I3nWxsl90sG7Cfjz6yX7YWpVjznX2Y`}
@@ -474,6 +474,7 @@ function Guest() {
   mapElement={<div style={{ height: "100%" }} />}
 />
 
+      </div>
       </div>
     </MainContainer>
   );

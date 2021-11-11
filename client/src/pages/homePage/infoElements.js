@@ -20,7 +20,7 @@ export const InfoContainer = styled.div`
 `
 
 export const InfoWrapper = styled.div`
-    max-width: 1000px;
+    // max-width: 1000px;
     margin:0 auto;
     display: grid;
     grid-template-columns:1fr 1fr 1fr;
@@ -70,7 +70,7 @@ export const InfoH1 = styled.h1`
     color: #fff;
     margin-bottom:64px;
 
-    @media screen and (max-width: 480px){
+    @media screen and (max-width: 680px){
         font-size = 2rem;
     }
 

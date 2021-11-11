@@ -8,6 +8,7 @@ import Box from "@material-ui/core/Box";
 import { Typography } from "@material-ui/core";
 import ReactPlayer from "react-player";
 import heroVideo from "../../videos/homebg.mp4";
+import "./info.css";
 
 const useStyles = makeStyles((theme) => ({
   main: {
@@ -38,9 +39,9 @@ const useStyles = makeStyles((theme) => ({
 
   title: {
     fontFamily: "Merienda",
-    paddingBottom: theme.spacing(3),
-    color: "yellow",
-    textShadow: "3px 3px green",
+    paddingBottom: theme.spacing(13),
+    color: "#FC7E01",
+    textShadow: "2px 2px white",
     textAlign: "center",
   },
 }));
@@ -73,27 +74,19 @@ const Hero = () => {
             </p>
             Parking made easy.
           </Typography>
-          <div>
-            <Link to="/guest">
-              <Button
-                variant="success"
-                type="submit"
-                className="registerbutton"
-              >
-                VISITOR REGISTER
-              </Button>
-            </Link>
 
-            <Link to="/account">
-              <Button
-                variant="warning"
-                type="submit"
-                className="registerbutton"
-              >
-                RESIDENT LOGIN
-              </Button>
-            </Link>
-          </div>
+          <Link to="/guest">
+            <Button variant="success" type="submit" className="registerbutton">
+              VISITOR REGISTER
+            </Button>
+          </Link>
+
+          <Link to="/account">
+            <Button variant="warning" type="submit" className="loginbutton">
+              RESIDENT LOGIN
+            </Button>
+          </Link>
+
           {/* <input className={classes.searchBar} 
             type="text" 
             placeholder="Search for Parking or Apartment"

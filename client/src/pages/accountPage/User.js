@@ -36,10 +36,6 @@ const User = () => {
       .catch((error) => console.log(error.message));
   }, []);
 
-
-
-
-
   console.log(guest);
   const unitNumber = userInfo.unit;
   const apartment = userInfo.apartment;
@@ -51,7 +47,7 @@ const User = () => {
   console.log(filterGuest);
 
   const [resident, setResident] = useState([]);
-  const[filterresident,setFilterresident] = useState([]);
+  const [filterresident, setFilterresident] = useState([]);
   useEffect(() => {
     fetch(`http://localhost:5000/resident`)
       .then((response) => response.json())
@@ -60,10 +56,9 @@ const User = () => {
   }, []);
 
   const filterVehicle = resident.filter((resident) => {
-    return resident.unit === unitNumber 
+    return resident.unit === unitNumber;
   });
   console.log(filterVehicle);
-
 
   useEffect(() => {
     setSortguest(filterGuest);
@@ -172,7 +167,7 @@ const User = () => {
                     <th>Unit Number</th>
                     <th>Vehicle Make</th>
                     <th>Vehicle Model</th>
-                    <th>Spot Number</th>
+                    <th>Plate Number</th>
                     <th>Spot Number</th>
                   </tr>
                 </thead>

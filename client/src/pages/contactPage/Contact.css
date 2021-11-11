@@ -39,23 +39,24 @@
 }
 
 #contact {
-  background: #eb7508;
-  padding: 25px;
-  margin: 50px 0;
+  background: #df6c00;
+  padding: 100px 100px;
+  margin-top: 50px ;
+  opacity:0.7
 }
 
 #contact h3 {
   color: rgb(255, 255, 255);
   display: block;
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 400;
   text-align: center;
 }
 
 #contact h4 {
-  margin: 5px 0 15px;
+  margin: 10px 0 100px;
   display: block;
-  font-size: 13px;
+  font-size: 20px;
   text-align: center;
   color: white;
 }
