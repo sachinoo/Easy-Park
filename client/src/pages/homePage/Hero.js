@@ -69,7 +69,7 @@ const Hero = () => {
           color="white"
         >
           <Typography variant="h3" component="h1" className={classes.title}>
-            <p className={classes.title}>
+            <p className="titleshome">
               GET YOUR PARKING PERMIT FROM ANYWHERE
             </p>
             Parking made easy.

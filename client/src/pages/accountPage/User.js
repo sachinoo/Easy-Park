@@ -77,6 +77,11 @@ const User = () => {
           REGISTER GUEST
         </Button>
       </Link>
+      <Link to="/removevehicle">
+        <Button style={{ marginLeft: 10, marginBottom: 6 }} size="lg">
+          REMOVE GUEST
+        </Button>
+      </Link>
       <div className="container">
         <div className="bloc-tabs">
           <button

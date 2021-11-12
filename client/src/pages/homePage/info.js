@@ -23,7 +23,7 @@ const Info = () => {
   return (
     <InfoContainer>
       <InfoH1> Our Services</InfoH1>
-      <div>
+      <div className="imagebanner">
         <img src={Banner} />
       </div>
 
