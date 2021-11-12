@@ -13,7 +13,6 @@ import {
 import * as parksData from "../../data/parking.json";
 import bgImage from "../../images/parkingImage3.jpg";
 import axios from "axios";
-import "../guestPage/Guest.css";
 
 const Intro = styled.div`
   display: flex;
@@ -57,8 +56,6 @@ const initialState = {
   last4Digits: "",
   spotNumber: "",
 };
-
-
 
 function Guest() {
   const [spot, setSpot] = useState([]); // array to store parkings
@@ -141,7 +138,7 @@ function Guest() {
       location: input.location,
       unitNumber: input.unitNumber,
       lisencePlate: input.lisencePlate,
-      spotNumber: input.spotNumber
+      spotNumber: input.spotNumber,
     };
     const spotInfo = {
       location: input.location,
@@ -197,7 +194,6 @@ function Guest() {
 
   return (
     <MainContainer>
-      
       <div className="mainContainer">
         <form id="form">
           <Card
@@ -274,10 +270,7 @@ function Guest() {
                   </select>
                   {/* <TextField name='spotNumber' value={input.spotNumber} label="Spot Number" placeholder="Enter spotNumber" variant="outlined" fullWidth required onChange={handleChange} /> */}
                 </Grid>
-                
-                
-                
-                
+
                 <Grid xs={12} xs={6} item>
                   <TextField
                     name="lisencePlate"
@@ -290,7 +283,7 @@ function Guest() {
                     onChange={handleChange}
                   />
                 </Grid>
-                
+
                 <Grid xs={12} xs={6} item>
                   <TextField
                     name="unitNumber"

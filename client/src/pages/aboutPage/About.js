@@ -1,11 +1,11 @@
 import React from "react";
 import "./AboutStyle.css";
-import imageRimsa from "../../images/team/Rimsa.jpg";
-import imageMalik from "../../images/team/Malik.jpg";
-import imageSachin from "../../images/team/Sachin.jpg";
-import imageNorbu from "../../images/team/Norbu.jpg";
-import imageBuddharaj from "../../images/team/Buddharaj.jpg";
-import imageSamrat from "../../images/team/Samrat.jpg";
+// import imageRimsa from "../../images/team/Rimsa.jpg";
+// import imageMalik from "../../images/team/Malik.jpg";
+// import imageSachin from "../../images/team/Sachin.jpg";
+// import imageNorbu from "../../images/team/Norbu.jpg";
+// import imageBuddharaj from "../../images/team/Buddharaj.jpg";
+// import imageSamrat from "../../images/team/Samrat.jpg";
 
 function About() {
   return (

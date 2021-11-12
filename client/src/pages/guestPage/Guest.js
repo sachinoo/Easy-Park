@@ -16,6 +16,7 @@ import {
   Marker,
   InfoWindow,
 } from "react-google-maps";
+import { Link } from "react-router-dom";
 import * as parksData from "../../data/parking.json";
 import bgImage from "../../images/parkingImage3.jpg";
 import axios from "axios";
@@ -426,7 +427,7 @@ function Guest() {
                   <TextField
                     name="lisencePlate"
                     value={input.lisencePlate}
-                    label="lisence Plate number"
+                    label="Lisence Plate number"
                     placeholder="Enter vehicle plate number"
                     variant="outlined"
                     fullWidth
@@ -459,22 +460,24 @@ function Guest() {
                     Register
                   </Button>
                 </Grid>
+                <Grid>
+                  Looking to Remove Permit ?{" "}
+                  <Link to="/removevehicle">Click Here</Link>
+                </Grid>
               </Grid>
             </CardContent>
           </Card>
         </form>
 
-     
         <div className="maps" style={{ width: "50vw", height: "60vh" }}>
-<WrappedMap
-  googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,
+          <WrappedMap
+            googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,
   places&key=AIzaSyDO8I3nWxsl90sG7Cfjz6yX7YWpVjznX2Y`}
-  loadingElement={<div style={{ height: "100%" }} />}
-  containerElement={<div style={{ height: "100%" }} />}
-  mapElement={<div style={{ height: "100%" }} />}
-/>
-
-      </div>
+            loadingElement={<div style={{ height: "100%" }} />}
+            containerElement={<div style={{ height: "100%" }} />}
+            mapElement={<div style={{ height: "100%" }} />}
+          />
+        </div>
       </div>
     </MainContainer>
   );
